@@ -1,0 +1,31 @@
+<div class="container mt-5 md-5">
+    <h2 class="text-light">New Account Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>User ID</h5>
+            <input type="text" [(ngModel)]="editedUser.userId" name="userId" id="userId" placeholder="Enter User ID"
+                class="form-control mb-3" [readonly]="true">
+            <h5>Password</h5>
+            <input type="text" [(ngModel)]="password" name="userPassword" id="userPassword"
+                placeholder="Enter User Password" class="form-control mb-3" [readonly]="true">
+            <h5>First Name</h5>
+            <input type="text" [(ngModel)]="editedUser.userFirstName" name="userFirstName" id="userFirstName"
+                placeholder="Enter First Name" class="form-control mb-3" #userFirstName="ngModel" [readonly]="true">
+            <h5>Last Name</h5>
+            <input type="text" [(ngModel)]="editedUser.userLastName" name="userLastName" id="userLastName"
+                placeholder="Enter Last Name" class="form-control mb-3" #userLastName="ngModel" [readonly]="true">
+            <h5>Gender</h5>
+            <input type="text" [(ngModel)]="editedUser.userGender" name="userGender" id="userGender"
+                placeholder="Enter Last Name" class="form-control mb-3" #geuserGendernder="ngModel" [readonly]="true">
+
+            <h5>Contact</h5>
+            <input type="text" [(ngModel)]="editedUser.userContact" name="userContact" id="userContact"
+                placeholder="Enter Contact" class="form-control mb-3" #userContact="ngModel" minlength="10"
+                [readonly]="true">
+            <h5>Unit</h5>
+            <input type="text" [(ngModel)]="editedUser.userUnit" name="userUnit" id="userUnit"
+                placeholder="Enter Last Name" class="form-control mb-3" #userUnit="ngModel" [readonly]="true">
+
+        </form>
+    </div>
+</div>

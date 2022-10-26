@@ -1,0 +1,26 @@
+<div class="container mt-2 md-5">
+  <nz-table #basicTable [nzData]="userDetailsList">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>User ID</th>
+        <th>Unit Number</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of basicTable.data">
+        <td>{{ user.userLastName }} {{ user.userFirstName }}</td>
+        <td>{{ user.userId }}</td>
+        <td>{{ user.userUnit.unitId }}</td>
+        <td>{{ user.userStatus }}</td>
+        <td>
+          <a class="btn btn-primary" routerLink="/editUser" [queryParams]="{userId: user.userId}">Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a class="btn btn-danger" (click)="showConfirmDeleteUser(user.userId,user.userStatus)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

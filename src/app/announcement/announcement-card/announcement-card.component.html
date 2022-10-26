@@ -1,0 +1,16 @@
+<div class="card m-3" style="border:none;">
+  <div class="card-header">
+    Announcement
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{announcement.title}} <span *ngIf="isRoleMatch(['Admin'])"
+        class="badge bg-secondary">{{announcement.status}}</span></h5>
+    <p class="card-text">{{announcement.description}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">By: {{announcement.user.userId}}</h6>
+    <a routerLink="/editAnnouncement" [queryParams]="{success: announcement.id}" class="btn btn-primary"
+      *ngIf="isRoleMatch(['Admin'])">Edit</a>
+  </div>
+  <div class="card-footer text-muted">
+    At: {{date}} {{time}}
+  </div>
+</div>

@@ -1,0 +1,59 @@
+
+
+<div class="container mt-5 md-5">
+    <h2 class="text-light">Update Resident</h2>
+    <div class="card" style="padding:20px;">
+        <form #editUserForm="ngForm" (ngSubmit)="editUserForm.form.valid && showConfirmEditUserDetails()">
+            <h5>User ID</h5>
+            <input type="text" [(ngModel)]="editedUser.userId" name="userId" id="userId" placeholder="Enter User ID"
+                class="form-control mb-3" [readonly]="true">
+            <h5>Password</h5>
+            <input type="password" [(ngModel)]="editedUser.userPassword" name="userPassword" id="userPassword"
+                placeholder="Enter User Password" class="form-control mb-3" [readonly]="true">
+            <h5>First Name</h5>
+            <input type="text" [(ngModel)]="editedUser.userFirstName" name="userFirstName" id="userFirstName"
+                placeholder="Enter First Name" class="form-control mb-3" #userFirstName="ngModel" required>
+            <div *ngIf="userFirstName.touched && userFirstName.invalid" class="text-danger">
+                This is a required field
+            </div>
+            <h5>Last Name</h5>
+            <input type="text" [(ngModel)]="editedUser.userLastName" name="userLastName" id="userLastName"
+                placeholder="Enter Last Name" class="form-control mb-3" #userLastName="ngModel" required>
+            <div *ngIf="userLastName.touched && userLastName.invalid" class="text-danger">
+                This is a required field
+            </div>
+            <h5>Gender</h5>
+            <nz-radio-group name="userGender" [(ngModel)]="editedUser.userGender">
+                <label nz-radio-button nzValue="M">Male</label>
+                <label nz-radio-button nzValue="F">Female</label>
+            </nz-radio-group>
+
+            <h5>Contact</h5>
+            <input
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                type="text" [(ngModel)]="editedUser.userContact" name="userContact" id="userContact"
+                placeholder="Enter Contact" class="form-control mb-3" #userContact="ngModel" required minlength="10">
+            <div *ngIf="userContact.touched && userContact.invalid" class="text-danger">
+                <div *ngIf="userContact.errors?.['required']">This is a required field</div>
+                <div *ngIf="userContact.errors?.['minlength']">Minimum length is 10 digits</div>
+            </div>
+            <h5>Unit</h5>
+            <nz-select [(ngModel)]="editedUser.userUnit" nzAllowClear nzDisabled nzPlaceHolder="Choose" name="userUnit"
+                class="form-control mb-3" *ngIf="isOwner()">
+
+
+                <nz-option *ngFor="let unit of unitIdList" [nzValue]="unit" [nzLabel]="unit"></nz-option>
+            </nz-select>
+
+            <nz-select [(ngModel)]="editedUser.userUnit" nzPlaceHolder="Choose" name="userUnit"
+                class="form-control mb-3" *ngIf="isNotOwner()">
+
+
+                <nz-option *ngFor="let unit of unitIdList" [nzValue]="unit" [nzLabel]="unit"></nz-option>
+            </nz-select>
+
+
+            <input type="submit" value="Update Resident Account" class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>

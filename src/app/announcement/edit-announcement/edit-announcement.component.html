@@ -1,0 +1,28 @@
+<div class="container mt-5 md-5 w-75">
+  <h2 class="text-light">Edit Announcement</h2>
+  <div class="card" style="padding:20px;">
+    <form #editAnnouncementForm="ngForm" (ngSubmit)="editAnnouncementForm.form.valid &&showConfirmEditAnnouncement()">
+      <h5>Title</h5>
+      <input type="text" [(ngModel)]="announcement.title" name="title" id="title" placeholder="Enter announcement title"
+        class="form-control mb-3" #title="ngModel" required>
+      <div *ngIf="title.touched && title.invalid" class="text-danger">
+        This is a required field
+      </div>
+      <h5>Description</h5>
+      <textarea type="text" [(ngModel)]="announcement.description" name="description" id="description"
+        placeholder="Enter announcement description" class="form-control mb-3" #description="ngModel"
+        required></textarea>
+      <div *ngIf="description.touched && description.invalid" class="text-danger">
+        This is a required field
+      </div>
+
+      <div class="form-check form-switch">
+        <input [(ngModel)]="isActive" name="isActive" (change)="checkClicked(isActive)" class="form-check-input"
+          type="checkbox" role="switch" id="isActive">
+        <label class="form-check-label" for="isActive">Active</label>
+      </div>
+
+      <input type="submit" value="Save Changes" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>
