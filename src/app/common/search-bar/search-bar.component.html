@@ -1,0 +1,8 @@
+<div class="container mt-5">
+    <form (ngSubmit)="search()">
+        <h5 class="text-light">{{term}}</h5>
+        <input class="mt-3 mb-3 me-3" name="searchTerm" [(ngModel)]="searchTerm" type="search" placeholder="Search"
+            aria-label="Search">
+        <button class="btn btn-light" type="submit">Search</button>
+    </form>
+</div>

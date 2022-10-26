@@ -1,0 +1,12 @@
+<div class="container mt-5 w-75">
+  <h2 class="text-light">View Complaints</h2>
+  <form (ngSubmit)="applyFilter()">
+    <h5 class="text-light">Priority</h5>
+    <nz-select [(ngModel)]="option" nzAllowClear nzPlaceHolder="Choose" name="option">
+      <nz-option *ngFor="let option of options" [nzValue]="option" [nzLabel]="option"></nz-option>
+    </nz-select>
+    <br>
+    <br>
+    <input type="submit" value="Apply" class="btn btn-dark form-control rounded-0">
+  </form>
+</div>

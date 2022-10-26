@@ -1,0 +1,12 @@
+<div class="container mt-5 mb-5">
+    <h2 class="text-light m-2">Complaint Category Rankings <i nz-icon nzType="bar-chart" nzTheme="outline"></i></h2>
+    <h3 class="text-light m-2"><i nz-icon nzType="rise" nzTheme="outline"></i> Highest Priority</h3>
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let category of complaintCategoryList; index as i; trackBy: trackByFn" cdkDrag>
+            <h5>{{category.complaintCategoryName}}</h5>
+            <a *ngIf="notOthers(category.complaintCategoryName)" routerLink="/complaintCategoryKeyword"
+                [queryParams]="{categoryName: category.complaintCategoryName}" class="btn btn-dark">Keywords</a>
+        </div>
+    </div>
+    <h3 class="text-light m-2"><i nz-icon nzType="fall" nzTheme="outline"></i> Lowest Priority</h3>
+</div>

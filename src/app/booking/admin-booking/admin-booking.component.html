@@ -1,0 +1,5 @@
+<app-facility-date-selector [facilityList]="facilityList" [default]="default"
+    (onSearchSlots)="getFacilityBookingByFacilityDate($event)" title="View Facility Bookings">
+</app-facility-date-selector>
+<app-booking-card *ngFor="let booking of bookingList" [booking]="booking"></app-booking-card>
+<app-empty-booking *ngIf="showEmpty"></app-empty-booking>

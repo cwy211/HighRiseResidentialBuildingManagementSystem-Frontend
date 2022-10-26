@@ -1,0 +1,10 @@
+<div class="container mt-5 mb-5 w-75">
+    <h2 class="text-light m-2">Complaint Category Keywords</h2>
+    <h3 class="text-light m-2">{{categoryName}}</h3>
+
+    <div class="container" *ngFor="let keyword of keywords">
+        <h4 class="btn btn-secondary">{{keyword}} <i nz-icon nzType="delete" nzTheme="outline"
+                (click)="onClick(keyword)"></i></h4>
+    </div>
+</div>
+<app-add-complaint-keyword (onAddComplaintKeyword)="addComplaintKeyword($event)"></app-add-complaint-keyword>

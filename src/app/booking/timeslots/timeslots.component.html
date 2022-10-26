@@ -1,0 +1,11 @@
+<div class="container mb-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="bg-light d-flex justify-content-between">
+                <div>{{slot.time}}</div>
+                <div><button nz-button nzType="default" [disabled]="unavailability" (click)="onClick()">Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

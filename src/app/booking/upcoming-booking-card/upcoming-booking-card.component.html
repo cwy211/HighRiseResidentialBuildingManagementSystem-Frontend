@@ -1,0 +1,15 @@
+<div class="card m-3" style="border:none;">
+  <div class="card-header">
+    Booking
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Booking ID: {{booking.id}}</h5>
+    <p class="card-text">{{booking.fbFacility.name}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">By: {{booking.fbUser.userId}}</h6>
+    <a class="btn btn-primary" (click)="onClick()">Cancel Booking</a>
+  </div>
+  <div class="card-footer text-muted">
+    Date: {{booking.fbDate}}
+    Time: {{time}}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2 class="text-light">{{title}}</h2>
+  <form (ngSubmit)="searchSlots()">
+    <h5 class="text-light">Facility:</h5>
+    <nz-select [(ngModel)]="default" nzPlaceHolder="Choose" name="facility" class="mb-3">
+      <nz-option *ngFor="let facility of facilityList" [nzValue]="facility" [nzLabel]="facility.name"></nz-option>
+    </nz-select>
+
+    <h5 class="text-light">Date:</h5>
+
+    <nz-date-picker class="mb-3" name="date" [(ngModel)]="startDate"></nz-date-picker>
+
+    <input type="submit" value="Search Slots" class="btn btn-dark form-control rounded-0">
+  </form>
+</div>

@@ -1,0 +1,6 @@
+<app-facility-date-selector [facilityList]="facilityList" [default]="default"
+    (onSearchSlots)="getFacilityBookingByFacilityDate($event)" title="View Booking Slots"></app-facility-date-selector>
+
+<hr>
+<app-timeslots *ngFor="let slot of slotList" [slot]="slot" [selectedFacility]="selectedFacility"
+    [selectedDate]="selectedDate" (onMakeBooking)="makeFacilityBooking($event)"></app-timeslots>

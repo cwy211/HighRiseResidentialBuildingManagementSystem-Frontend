@@ -1,0 +1,23 @@
+<div class="container mt-5 md-5 w-75">
+    <h2 class="text-light">Complaint Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>Id</h5>
+            <input type="text" [(ngModel)]="complaint.id" [readonly]="true" name="id" id="id" class="form-control mb-3">
+
+            <h5>Title</h5>
+            <input type="text" [(ngModel)]="complaint.complaintTitle" [readonly]="true" name="title" id="title"
+                class="form-control mb-3">
+
+            <h5>Description</h5>
+            <textarea type="text" [(ngModel)]="complaint.complaintDescription" [readonly]="true" name="description"
+                id="description" class="form-control mb-3"></textarea>
+
+            <h5 *ngIf="checkStatus('Reviewed')">Response</h5>
+            <textarea *ngIf="checkStatus('Reviewed')" type="text" [(ngModel)]="complaint.complaintResponse"
+                name="response" id="response" [readonly]="true" placeholder="Enter response here"
+                class="form-control mb-3"></textarea>
+
+        </form>
+    </div>
+</div>

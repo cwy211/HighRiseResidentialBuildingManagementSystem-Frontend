@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-light">My Bookings</h2>
+
+    <nz-tabset>
+        <nz-tab [nzTitle]="titleTemplate">
+            <ng-template #titleTemplate>
+                <div class="text-light">
+                    <i nz-icon nzType="hourglass" nzTheme="outline"></i>
+                    <strong>Upcoming</strong>
+                </div>
+            </ng-template>
+            <app-upcoming-booking-card *ngFor="let booking of upcomingBookingList" [booking]="booking"
+                (onCancelBooking)="deleteFacilityBooking($event)"></app-upcoming-booking-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate2">
+            <ng-template #titleTemplate2>
+                <div class="text-light">
+                    <i nz-icon nzType="history" nzTheme="outline"></i> <strong>Past</strong>
+                </div>
+            </ng-template>
+            <app-booking-card *ngFor="let booking of pastBookingList" [booking]="booking"></app-booking-card>
+        </nz-tab>
+    </nz-tabset>
+
+
+
+</div>

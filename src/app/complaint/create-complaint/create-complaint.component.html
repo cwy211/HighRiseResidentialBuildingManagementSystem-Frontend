@@ -1,0 +1,32 @@
+<div class="container mt-5 w-75">
+    <h2 class="text-light">Create Complaint</h2>
+    <div class="card" style="padding:20px;">
+        <form nz-form #complaintForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(complaintForm)">
+            <h5>Complaint Title</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field">
+                    <nz-input-group>
+                        <input type="text" formControlName="complaintTitle" placeholder="Enter complaint title"
+                            class="form-control">
+
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <h5>Complaint Description</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field">
+                    <nz-input-group>
+
+                        <textarea type="text" formControlName="complaintDescription"
+                            placeholder="Enter complaint description" class="form-control"></textarea>
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <input type="submit" value="Make Complaint" class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>Í
+</div>

@@ -1,0 +1,18 @@
+<div class="container mt-5 w-75">
+  <div class="card" style="padding:20px;">
+    <form nz-form #keywordForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(keywordForm)">
+      <h5>Keyword</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <input type="text" formControlName="keyword" placeholder="Enter keyword" class="form-control" required>
+
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <input type="submit" value="Add" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

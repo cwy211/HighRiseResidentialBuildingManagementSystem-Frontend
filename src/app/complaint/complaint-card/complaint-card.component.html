@@ -1,0 +1,14 @@
+<div class="card m-3" style="border:none;" (click)="onClick()">
+  <div class="card-header">
+    Complaint
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Title: {{complaint.complaintTitle}}</h5>
+    <h6 class="card-title">Category: {{complaint.complaintCategory.complaintCategoryName}}</h6>
+    <h6 *ngIf="isRoleMatch(['Admin'])" class="card-title">Sentiment: {{complaint.sentimentValue}}</h6>
+    <h6 class="badge bg-secondary">{{complaint.complaintStatus}}</h6>
+  </div>
+  <div class="card-footer text-muted">
+    At: {{date}} {{time}}
+  </div>
+</div>
