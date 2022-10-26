@@ -1,0 +1,21 @@
+<div class="container mt-5 md-5">
+  <nz-table #basicTable [nzData]="ownershipList">
+    <thead>
+      <tr>
+        <th>Ownership ID</th>
+        <th>Owner</th>
+        <th>Unit Number</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ownership of basicTable.data">
+        <td>{{ ownership.id }}</td>
+        <td>{{ ownership.owner.userLastName }} {{ ownership.owner.userFirstName }}</td>
+        <td>{{ ownership.ownedUnit.unitId }}</td>
+        <td>{{ ownership.startDate }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+

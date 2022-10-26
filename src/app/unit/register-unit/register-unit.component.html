@@ -1,0 +1,41 @@
+<div class="container mt-5 md-5">
+  <h2 class="text-light">Register Unit</h2>
+  <div class="card" style="padding:20px;">
+    <form nz-form #unitForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(unitForm)">
+      <h5>Unit Number</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <input type="text" nz-input formControlName="unitId" placeholder="Enter Unit Number" class="form-control"
+              required>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <h5>Unit Block</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <input type="text" formControlName="unitBlock" placeholder="Enter User Block" class="form-control"
+              maxlength="1">
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <h5>Unit Floor</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <input
+              onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+              type="number" formControlName="unitFloor" placeholder="Enter Unit Floor" class="form-control">
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <input type="submit" value="Register Unit" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

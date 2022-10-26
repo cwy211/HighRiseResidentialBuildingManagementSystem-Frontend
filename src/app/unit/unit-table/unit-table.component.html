@@ -1,0 +1,29 @@
+<div class="container mt-2 md-5">
+  <nz-table #basicTable [nzData]="unitDetailsList">
+    <thead>
+      <tr>
+        <th>Unit Number
+
+        </th>
+        <th>Block</th>
+        <th>Floor</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let unit of basicTable.data">
+        <td>{{ unit.unitId }}</td>
+        <td>{{ unit.unitBlock }}</td>
+        <td>{{ unit.unitFloor }}</td>
+        <td>{{ unit.unitOwnedStatus }}</td>
+        <td>
+          <a class="btn btn-success" routerLink="/showUnit" [queryParams]="{unitId: unit.unitId}">View</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a class="btn btn-primary" routerLink="/editUnit" [queryParams]="{unitId: unit.unitId}">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</div>

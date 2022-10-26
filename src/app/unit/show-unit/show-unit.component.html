@@ -1,0 +1,22 @@
+<div class="container mt-5 md-5">
+    <h2 class="text-light">Unit Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>Unit Number</h5>
+            <input type="text" [(ngModel)]="unit.unitId" name="unitId" id="unitId" class="form-control mb-3"
+                [readonly]="true">
+            <h5>Block</h5>
+            <input type="text" [(ngModel)]="unit.unitBlock" name="unitBlock" id="unitBlock" class="form-control mb-3"
+                [readonly]="true">
+            <h5>Floor</h5>
+            <input type="text" [(ngModel)]="unit.unitFloor" name="unitFloor" id="unitFloor" class="form-control mb-3"
+                [readonly]="true">
+
+            <h5>Residents</h5>
+            <a class="btn btn-info m-1" *ngFor="let resident of userList">{{resident}}</a>
+            <div class="text-warning" *ngIf="noResidents()">No Residents</div>
+
+
+        </form>
+    </div>
+</div>

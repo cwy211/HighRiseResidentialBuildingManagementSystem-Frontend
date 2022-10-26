@@ -1,0 +1,82 @@
+<div class="container mt-5 md-5 w-75">
+    <h2 class="text-light">Add Ownership</h2>
+    <div class="card" style="padding:20px;">
+        <form nz-from #ownershipForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(ownershipForm)">
+
+
+
+            <h5>Password</h5>
+
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field!">
+                    <nz-input-group [nzSuffix]="suffixTemplate">
+                        <input [type]="passwordVisible ? 'text' : 'password'"  formControlName="userPassword" placeholder="Enter User Password"
+                            class="form-control">
+                    </nz-input-group>
+                    <ng-template #suffixTemplate>
+                        <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+                            (click)="passwordVisible = !passwordVisible"></i>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <h5>First Name</h5>
+
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field!">
+                    <nz-input-group>
+                        <input type="text" formControlName="userFirstName" placeholder="Enter First Name"
+                            class="form-control">
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <h5>Last Name</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field!">
+                    <nz-input-group>
+                        <input type="text" formControlName="userLastName" placeholder="Enter Last Name"
+                            class="form-control">
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+
+            <h5>Gender</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field!">
+                    <nz-radio-group formControlName="userGender">
+                        <label nz-radio-button nzValue="M">Male</label>
+                        <label nz-radio-button nzValue="F">Female</label>
+                    </nz-radio-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <h5>Contact</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input 10 digit numbers!">
+                    <nz-input-group>
+                        <input type="text" formControlName="userContact" placeholder="Enter Contact"
+                            class="form-control">
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <h5>Unit</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field!">
+                    <nz-select formControlName="userUnit" nzPlaceHolder="Choose" class="form-control">
+                        <nz-option *ngFor="let unit of unitIdList" [nzValue]="unit" [nzLabel]="unit"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+
+            <input type="submit" value="Add Ownership" class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>
