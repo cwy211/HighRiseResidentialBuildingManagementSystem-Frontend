@@ -1,0 +1,11 @@
+<div *ngIf="isNotZero()" class="card m-3" style="border:none;">
+  <div class="card-header">
+    Maintenance Fee
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{fee.yearMonth}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">RM{{fee.total}}</h6>
+    <a *ngIf="isRoleMatch(['User'])" style="margin: 5px;" (click)="viewFeeDetails()" class="btn btn-primary">View Fee
+      Structure</a>
+  </div>
+</div>

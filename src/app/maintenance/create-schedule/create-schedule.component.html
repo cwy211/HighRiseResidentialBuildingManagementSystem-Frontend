@@ -1,0 +1,14 @@
+<div class="container mt-5 w-75">
+  <h2 class="text-light">Create Maintenance Schedule</h2>
+  <h5 class="text-light">Schedule Type</h5>
+  <nz-radio-group name="scheduleType" [(ngModel)]="scheduleType">
+    <label nz-radio-button nzValue="Single">Single Maintenance</label>
+    <label nz-radio-button nzValue="Recurring">Recurring Maintenance</label>
+  </nz-radio-group>
+</div>
+
+<app-recurring-maintenance *ngIf="checkScheduleType('Recurring')" [facilityList]="facilityList" [default]="facility"
+  (onCreateRecurringMaintenance)="createRecurringMaintenance($event)"></app-recurring-maintenance>
+
+<app-single-maintenance *ngIf="checkScheduleType('Single')" [facilityList]="facilityList" [default]="facility"
+  (onCreateSingleMaintenance)="createSingleMaintenance($event)"></app-single-maintenance>

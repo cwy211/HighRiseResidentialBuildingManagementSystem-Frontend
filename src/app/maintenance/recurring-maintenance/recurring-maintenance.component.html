@@ -1,0 +1,46 @@
+<div class="container mt-5 w-75">
+  <div class="card" style="padding:20px;">
+    <form (ngSubmit)="showConfirmCreateSchedule()">
+      <h5>Facility</h5>
+
+
+
+      <nz-select [(ngModel)]="default" (ngModelChange)="log($event)" nzPlaceHolder="Choose" name="facility"
+        class="mb-3">
+        <nz-option *ngFor="let facility of facilityList" [nzValue]="facility" [nzLabel]="facility.name"></nz-option>
+      </nz-select>
+
+
+      <h5>Date Range</h5>
+      <nz-range-picker class="mb-3" nzAllowClear="false" name="date" [nzDisabledDate]="disabledStartDate"
+        [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
+      <div *ngIf="nullDate" class="text-danger">
+        This is a required field
+      </div>
+
+      <h5>Interval</h5>
+
+      <nz-select class="mb-3" name="interval" [(ngModel)]="selectedInterval" [nzDropdownRender]="renderTemplate"
+        nzPlaceHolder="Select Interval" (ngModelChange)="intervalLog($event)">
+        <nz-option *ngFor="let interval of intervalList" [nzLabel]="interval" [nzValue]="interval"></nz-option>
+      </nz-select>
+      <ng-template #renderTemplate>
+        <nz-divider></nz-divider>
+        <div class="container">
+          <input
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+            style="width:100px;" type="text" nz-input #inputElement minlength="1" maxlength="3" />
+          <a class="add-item" (click)="addItem(inputElement)">
+            <i nz-icon nzType="plus"></i>
+            Custom Days
+          </a>
+        </div>
+      </ng-template>
+
+      <h5>Time</h5>
+      <nz-time-picker class="mb-3" name="time" [(ngModel)]="time" nzFormat="HH:mm"></nz-time-picker>
+
+      <input type="submit" value="Create Schedule" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

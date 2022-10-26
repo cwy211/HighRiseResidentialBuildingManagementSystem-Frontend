@@ -1,0 +1,66 @@
+<div class="container mt-5 w-75">
+    <h2 class="text-light">Maintenance Details</h2>
+    <div class="card" style="padding:20px;">
+        <form #maintenanceDetailsForm="ngForm" (ngSubmit)="showConfirmSaveFacilityMaintenance()">
+            <h5>Id</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.id" [readonly]="true" name="id" id="id"
+                class="form-control mb-3">
+
+            <h5>Facility</h5>
+            <input type="text" [(ngModel)]="facility" [readonly]="true" name="facility" id="facility"
+                class="form-control mb-3">
+
+            <h5>Date</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.fmDate" [readonly]="true" name="date" id="date"
+                class="form-control mb-3">
+
+            <h5>Time</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.fmTime" [readonly]="true" name="time" id="time"
+                class="form-control mb-3">
+
+
+            <h5>Description</h5>
+
+            <textarea type="text" [(ngModel)]="facilityMaintenance.description" name="description" id="description"
+                [readonly]="checkStatus('Completed')" placeholder="Enter description here" class="form-control mb-3"
+                #description="ngModel" required></textarea>
+
+            <div *ngIf="!submitted && description.touched && description.invalid" class="text-danger mb-3">
+                This is a required field
+            </div>
+
+            <div *ngIf="submitted && description.invalid" class="text-danger mb-3">
+                This is a required field
+            </div>
+
+            <h5>Maintenance Type</h5>
+            <nz-select class="mb-3" *ngIf="checkStatus('Incomplete')" [nzDropdownRender]="renderTemplate" name="type"
+                [(ngModel)]="selectedType" nzPlaceHolder="Select Maintenance Type">
+                <nz-option *ngFor="let type of maintenanceTypeList" [nzLabel]="type" [nzValue]="type"></nz-option>
+            </nz-select>
+            <ng-template #renderTemplate>
+                <nz-divider></nz-divider>
+                <div class="container">
+                    <input style="width:100px;" type="text" nz-input #inputElement />
+                    <a class="add-item" (click)="addItem(inputElement)">
+                        <i nz-icon nzType="plus"></i>
+                        Custom Maintenance Type
+                    </a>
+                </div>
+            </ng-template>
+
+
+            <input *ngIf="checkStatus('Completed')" type="text" [(ngModel)]="facilityMaintenance.type" [readonly]="true"
+                name="selectedType" id="selectedType" class="form-control mb-3">
+
+            <h5>Admin Incharge</h5>
+            <input type="text" [(ngModel)]="adminIncharge" [readonly]="true" name="adminIncharged" id="adminIncharged"
+                class="form-control mb-3">
+
+
+
+            <input *ngIf="checkStatus('Incomplete')" type="submit" value="Complete"
+                class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>

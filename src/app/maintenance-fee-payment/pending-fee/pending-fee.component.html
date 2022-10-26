@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="text-light mt-5 ms-3">Maintenance Fees</h2>
+    <div class="text-light mt-5 ms-3" *ngIf="checkList()">
+        No maintenance fee may be due to:
+        <br>
+        1. Maintenance fee for this month will be shown next month
+        <br>
+        2. You do not own a unit
+    </div>
+    <app-fee-card *ngFor="let fee of feeList" [fee]="fee"></app-fee-card>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="text-light mt-3">Maintenance Fund Usage</h2>
+    <form (ngSubmit)="searchUsage()">
+        <h5 class="text-light">Month:</h5>
+        <nz-date-picker class="mb-3 me-3" nzAllowClear="false" name="month" nzMode="month" [(ngModel)]="month">
+        </nz-date-picker>
+
+        <input type="submit" value="Generate" class="btn btn-dark rounded-0">
+    </form>
+
+</div>

@@ -1,0 +1,14 @@
+
+<div class="card m-3" style="border:none;" (click)="onClick()">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Time: {{time}} <span class="badge bg-secondary">{{schedule.status}}</span></h5>
+
+        <h5 class="card-title">{{schedule.fmFacility.name}}</h5>
+        <a (click)="onClick()" class="btn btn-primary">View</a>
+
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>

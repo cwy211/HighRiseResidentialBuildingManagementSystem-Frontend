@@ -1,0 +1,53 @@
+<div class="container mt-5 w-75">
+    <h2 class="text-light">Add Maintenance Fund Usage</h2>
+    <div class="card" style="padding:20px;">
+        <form nz-form #fundUsageForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(fundUsageForm)">
+            <h5>Title</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field">
+                    <nz-input-group>
+                        <input type="text" formControlName="title" placeholder="Enter usage title"
+                            class="form-control mb-3">
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+            <h5>Description</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field">
+                    <nz-input-group>
+                        <textarea type="text" formControlName="description" placeholder="Enter usage description"
+                            class="form-control mb-3"></textarea>
+
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+
+            <h5>Price</h5>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="This is a required field">
+                    <nz-input-group>
+                        <input
+                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
+                            type="text" formControlName="price" placeholder="Enter price" class="form-control mb-3">
+
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+
+
+
+
+            <h5>Payment Date</h5>
+            <nz-date-picker nzAllowClear="false" [nzDisabledDate]="disabledDate" class="form-control mb-3" formControlName="paymentDate">
+            </nz-date-picker>
+
+
+
+
+            <input type="submit" value="Create" class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>

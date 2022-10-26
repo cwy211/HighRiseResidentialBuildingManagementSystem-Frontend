@@ -1,0 +1,74 @@
+<div class="container">
+    <nz-tabset>
+        <nz-tab [nzTitle]="titleTemplate">
+            <ng-template #titleTemplate>
+                <div class="text-light">
+                    <strong>Sunday</strong>
+                    ({{sunday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of sundayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate2">
+            <ng-template #titleTemplate2>
+                <div class="text-light">
+                    <strong>Monday</strong>
+                    ({{monday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of mondayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate3">
+            <ng-template #titleTemplate3>
+                <div class="text-light">
+                    <strong>Tuesday</strong>
+                    ({{tuesday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of tuesdayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate4">
+            <ng-template #titleTemplate4>
+                <div class="text-light">
+                    <strong>Wednesday</strong>
+                    ({{wednesday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of wednesdayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate5">
+            <ng-template #titleTemplate5>
+                <div class="text-light">
+                    <strong>Thursday</strong>
+                    ({{thursday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of thursdayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate6">
+            <ng-template #titleTemplate6>
+                <div class="text-light">
+                    <strong>Friday</strong>
+                    ({{friday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of fridayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate7">
+            <ng-template #titleTemplate7>
+                <div class="text-light">
+                    <strong>Saturday</strong>
+                    ({{saturday}})
+                </div>
+            </ng-template>
+            <app-maintenance-card *ngFor="let schedule of saturdayScheduleList" [schedule]="schedule">
+            </app-maintenance-card>
+        </nz-tab>
+    </nz-tabset>
+</div>

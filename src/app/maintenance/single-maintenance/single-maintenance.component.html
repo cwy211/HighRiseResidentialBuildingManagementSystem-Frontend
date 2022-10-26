@@ -1,0 +1,22 @@
+<div class="container mt-5 w-75">
+  <div class="card" style="padding:20px;">
+    <form #scheduleForm="ngForm" (ngSubmit)="showConfirmCreateSchedule()">
+      <h5>Facility</h5>
+
+      <nz-select [(ngModel)]="default" nzPlaceHolder="Choose" name="facility" class="mb-3">
+        <nz-option *ngFor="let facility of facilityList" [nzValue]="facility" [nzLabel]="facility.name"></nz-option>
+      </nz-select>
+
+      <h5>Date</h5>
+      <nz-date-picker class="mb-3" nzAllowClear="false" name="date" [(ngModel)]="startDate"
+        [nzDisabledDate]="disabledStartDate"></nz-date-picker>
+
+      <h5>Time</h5>
+
+      <nz-time-picker class="mb-3" nzAllowEmpty="false" name="time" [(ngModel)]="time" nzFormat="HH:mm">
+      </nz-time-picker>
+
+      <input type="submit" value="Create Schedule" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

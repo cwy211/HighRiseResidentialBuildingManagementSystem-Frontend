@@ -1,0 +1,31 @@
+<div class="container mt-2 md-5">
+  <nz-table #basicTable [nzData]="usageList">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Payment Date</th>
+        <th>Upload Time</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usage of basicTable.data">
+        <td>{{usage.title}}</td>
+        <td>RM{{usage.price}}</td>
+        <td>{{usage.paymentDate}}</td>
+        <td>{{usage.uploadDateTime}}</td>
+        <td>
+          <a class="btn btn-success" routerLink="/viewFundDetails" [queryParams]="{fundUsageId: usage.id}">View</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a class="btn btn-danger" *ngIf="isRoleDateMatch(['Admin'],searchedDate)"
+            (click)="showConfirmDeleteFundUsage(usage.id)">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Total:</td>
+        <td>RM{{sum}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

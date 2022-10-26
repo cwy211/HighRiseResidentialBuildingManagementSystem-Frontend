@@ -1,0 +1,33 @@
+<div class="container mt-5 md-5 w-75">
+    <h2 class="text-light">Fund Usage Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>Fund Usage ID</h5>
+            <input type="text" [(ngModel)]="fundUsage.id" name="id" id="id" class="form-control mb-3" [readonly]="true">
+            <h5>Title</h5>
+            <input type="text" [(ngModel)]="fundUsage.title" name="title" id="title" class="form-control mb-3"
+                [readonly]="true">
+
+            <h5>Description</h5>
+            <textarea type="text" [(ngModel)]="fundUsage.description" [readonly]="true" name="description"
+                id="description" class="form-control mb-3"></textarea>
+
+            <h5>Price</h5>
+            <input type="text" [(ngModel)]="fundUsage.price" name="price" id="price" class="form-control mb-3"
+                [readonly]="true">
+
+            <h5>Payment Date</h5>
+            <input type="text" [(ngModel)]="fundUsage.paymentDate" name="paymentDate" id="paymentDate"
+                class="form-control mb-3" [readonly]="true">
+
+            <h5>Uploaded Date</h5>
+            <input type="text" [(ngModel)]="fundUsage.uploadDateTime" name="uploadDateTime" id="uploadDateTime"
+                class="form-control mb-3" [readonly]="true">
+
+            <h5>Uploaded By</h5>
+            <input type="text" [(ngModel)]="uploader" name="uploader" id="uploader" class="form-control mb-3"
+                [readonly]="true">
+
+        </form>
+    </div>
+</div>
