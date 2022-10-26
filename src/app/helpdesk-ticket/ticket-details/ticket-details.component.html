@@ -1,0 +1,20 @@
+<div class="container mt-5 w-75">
+    <h2 class="text-light">View Ticket Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>Id</h5>
+            <input type="text" [(ngModel)]="ticket.id" [readonly]="true" name="id" id="id" class="form-control mb-3">
+            <h5>Description</h5>
+            <textarea type="text" [(ngModel)]="ticket.ticketDescription" [readonly]="true" name="description"
+                id="description" class="form-control mb-3"></textarea>
+
+            <h5 *ngIf="checkStatus('Reviewed')">Response</h5>
+            <textarea *ngIf="checkStatus('Reviewed')" type="text" [(ngModel)]="ticket.ticketResponse" name="response"
+                id="response" [readonly]="true" placeholder="Enter response here" class="form-control mb-3"></textarea>
+
+            <h5>By: </h5>
+            <input type="text" [(ngModel)]="user" [readonly]="true" name="userId" id="userId" class="form-control mb-3">
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-5 mb-5 w-75">
+    <h2 class="text-light">Edit Facility</h2>
+    <div class="card" style="padding:20px;">
+        <form #editFacilityForm="ngForm" (ngSubmit)="editFacilityForm.form.valid &&showConfirmEditFacility()">
+            <h5>Facility Name</h5>
+            <textarea type="text" [(ngModel)]="facility.name" name="name" id="name" placeholder="Enter facility name"
+                class="form-control mb-3" #name="ngModel" required></textarea>
+            <div *ngIf="name.touched && name.invalid" class="text-danger">
+                This is a required field
+            </div>
+
+            <h5>Facility Description</h5>
+            <textarea type="text" [(ngModel)]="facility.description" name="description" id="description"
+                placeholder="Enter facility description" class="form-control mb-3" #description="ngModel"
+                required></textarea>
+            <div *ngIf="description.touched && description.invalid" class="text-danger">
+                This is a required field
+            </div>
+
+            <div class="form-check form-switch">
+                <input [(ngModel)]="isBookingFacility" name="isBookingFacility" class="form-check-input" type="checkbox"
+                    role="switch" id="isBookingFacility">
+                <label class="form-check-label" for="isBookingFacility">Can be Booked</label>
+            </div>
+
+            <input type="submit" value="Edit Facility" class="btn btn-outline-primary form-control rounded-0">
+        </form>
+    </div>
+</div>

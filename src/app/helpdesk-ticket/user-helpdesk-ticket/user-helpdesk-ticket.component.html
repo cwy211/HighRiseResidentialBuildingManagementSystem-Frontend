@@ -1,0 +1,31 @@
+<div class="container">
+    <nz-tabset>
+        <nz-tab [nzTitle]="titleTemplate">
+            <ng-template #titleTemplate>
+                <div class="text-light">
+                    <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
+                    <strong>Pending</strong>
+                </div>
+            </ng-template>
+            <app-ticket-card *ngFor="let ticket of pendingTicketList" [ticket]="ticket"></app-ticket-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate2">
+            <ng-template #titleTemplate2>
+                <div class="text-light">
+                    <i nz-icon nzType="hourglass" nzTheme="outline"></i>
+                    <strong>Processing</strong>
+                </div>
+            </ng-template>
+            <app-ticket-card *ngFor="let ticket of processingTicketList" [ticket]="ticket"></app-ticket-card>
+        </nz-tab>
+        <nz-tab [nzTitle]="titleTemplate3">
+            <ng-template #titleTemplate3>
+                <div class="text-light">
+                    <i nz-icon nzType="check-circle" nzTheme="outline"></i>
+                    <strong>Reviewed</strong>
+                </div>
+            </ng-template>
+            <app-ticket-card *ngFor="let ticket of reviewedTicketList" [ticket]="ticket"></app-ticket-card>
+        </nz-tab>
+    </nz-tabset>
+</div>

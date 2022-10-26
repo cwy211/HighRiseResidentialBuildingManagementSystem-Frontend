@@ -1,0 +1,26 @@
+<div class="container mt-2 md-5">
+  <h2 class="text-light">View Maintenance History</h2>
+  <nz-table #basicTable [nzData]="maintenanceHistoryList">
+    <thead>
+      <tr>
+        <th>Maintenance Id</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let maintenance of basicTable.data">
+        <td>{{ maintenance.id }}</td>
+        <td>{{ maintenance.fmDate }}</td>
+        <td>{{ maintenance.fmTime}}</td>
+        <td>{{ maintenance.type }}</td>
+        <td>
+          <a class="btn btn-success" routerLink="/viewMaintenanceHistory"
+            [queryParams]="{maintenanceId: maintenance.id}">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

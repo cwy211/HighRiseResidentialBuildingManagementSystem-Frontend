@@ -1,0 +1,27 @@
+<div class="container mt-2 md-5">
+  <nz-table #basicTable [nzData]="facilityList">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Booking Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let facility of basicTable.data">
+        <td>{{ facility.id }}</td>
+        <td>{{ facility.name }}</td>
+        <td>{{ facility.description}}</td>
+        <td>{{ facility.bookingStatus}}</td>
+        <td>
+          <a class="btn btn-primary" routerLink="/editFacility" [queryParams]="{facilityId: facility.id}">Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a class="btn btn-success" routerLink="/maintenanceHistory" [queryParams]="{facilityId: facility.id}">View
+            Maintenance History</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

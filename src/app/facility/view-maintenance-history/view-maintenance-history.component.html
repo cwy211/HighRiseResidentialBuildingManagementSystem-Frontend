@@ -1,0 +1,36 @@
+<div class="container mt-5 mb-5 w-75">
+    <h2 class="text-light">Maintenance History Details</h2>
+    <div class="card" style="padding:20px;">
+        <form>
+            <h5>Id</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.id" [readonly]="true" name="id" id="id"
+                class="form-control mb-3">
+
+            <h5>Facility</h5>
+            <input type="text" [(ngModel)]="facility" [readonly]="true" name="facility" id="facility"
+                class="form-control mb-3">
+
+            <h5>Date</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.fmDate" [readonly]="true" name="date" id="date"
+                class="form-control mb-3">
+
+            <h5>Time</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.fmTime" [readonly]="true" name="time" id="time"
+                class="form-control mb-3">
+
+
+            <h5>Description</h5>
+            <textarea type="text" [(ngModel)]="facilityMaintenance.description" name="description" id="description"
+                [readonly]="true" placeholder="Enter description here" class="form-control mb-3"></textarea>
+
+            <h5>Maintenance Type</h5>
+            <input type="text" [(ngModel)]="facilityMaintenance.type" [readonly]="true" name="selectedType"
+                id="selectedType" class="form-control mb-3">
+
+            <h5>Maintenance Personnel</h5>
+            <input type="text" [(ngModel)]="admin" [readonly]="true" name="admin" id="admin" class="form-control mb-3">
+
+
+        </form>
+    </div>
+</div>

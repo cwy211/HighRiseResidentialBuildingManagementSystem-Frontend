@@ -1,0 +1,33 @@
+<div class="container mt-5 w-75">
+  <h2 class="text-light">Handle Helpdesk Ticket</h2>
+  <div class="card" style="padding:20px;">
+    <form #handleTicketForm="ngForm" (ngSubmit)="showConfirmHandleTicket()">
+      <h5>Id</h5>
+      <input type="text" [(ngModel)]="ticket.id" [readonly]="true" name="id" id="id" class="form-control mb-3">
+      <h5>Description</h5>
+      <textarea type="text" [(ngModel)]="ticket.ticketDescription" [readonly]="true" name="ticketDescription"
+        id="ticketDescription" class="form-control mb-3"></textarea>
+
+      <h5>Response</h5>
+      <textarea type="text" [(ngModel)]="ticket.ticketResponse" name="ticketResponse" id="ticketResponse"
+        placeholder="Enter response here" class="form-control mb-3" #ticketResponse="ngModel" required></textarea>
+
+      <div *ngIf="!submitted && ticketResponse.touched && ticketResponse.invalid" class="text-danger">
+        This is a required field
+      </div>
+
+      <div *ngIf="submitted && ticketResponse.invalid" class="text-danger">
+        This is a required field
+      </div>
+
+      <h5>By: </h5>
+      <input type="text" [(ngModel)]="user" [readonly]="true" name="userId" id="userId" class="form-control mb-3">
+
+
+      <input type="submit" *ngIf="checkStatus('Processing')" value="Handle"
+        class="btn btn-outline-primary form-control rounded-0">
+      <input type="submit" *ngIf="checkStatus('Pending')" value="Handle"
+        class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

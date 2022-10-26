@@ -1,0 +1,40 @@
+<div class="container mt-5 w-75">
+  <h2 class="text-light">Add Facility</h2>
+  <div class="card" style="padding:20px;">
+    <form #facilityForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(facilityForm)">
+      <h5>Facility Name</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <textarea type="text" formControlName="name" placeholder="Enter facility name"
+              class="form-control"></textarea>
+
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+
+      <h5>Facility Description</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group>
+            <textarea type="text" formControlName="description" placeholder="Enter facility description"
+              class="form-control"></textarea>
+
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <div class="form-check form-switch">
+        <input formControlName="bookingStatus" class="form-check-input" type="checkbox" role="switch"
+          id="bookingStatus">
+        <label class="form-check-label" for="bookingStatus">Can be Booked</label>
+      </div>
+
+
+
+      <input type="submit" value="Add Facility" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>

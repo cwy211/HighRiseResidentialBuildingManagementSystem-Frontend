@@ -1,0 +1,45 @@
+<div class="container mt-5 w-50">
+  <div class="card" style="padding:20px;">
+    <form nz-form #loginForm="ngForm" [formGroup]="validateForm" (ngSubmit)="submitForm(loginForm)">
+      <div class="position-static">
+        <h3>Login</h3>
+      </div>
+      <h5 class="m-2">User ID</h5>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+          <nz-input-group class="m-2" nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="userId" id="userId" placeholder="Enter your username">
+
+
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+
+      <h5 class="m-2">Password</h5>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="This is a required field">
+
+          <nz-input-group class="m-2" nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
+            <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="userPassword"
+              id="userPassword" placeholder="Enter your password">
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"></i>
+          </ng-template>
+
+
+        </nz-form-control>
+      </nz-form-item>
+
+
+
+      <h6 class="text-danger">{{message}}</h6>
+
+      <input type="submit" value="Login" class="btn btn-outline-primary form-control rounded-0">
+    </form>
+  </div>
+</div>
