@@ -1,4 +1,7 @@
 # HighriseresbuildmsFrontend
+Description: The aim of this project is to improve the management and maintenance of high rise residential buildings in Malaysia. The two user types are admin and residents.
+
+System Architecture: The frontend of the HRRBMS is developed using Angular 13.3.2, Bootstrap and NG-Zorro.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
